@@ -1,0 +1,33 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic Sneakers",
+      "description": "Comfortable everyday sneakers with a modern design.",
+      "price": 59.99,
+      "category": "Shoes",
+      "stock": 20,
+      "image": "https://via.placeholder.com/200x200?text=Sneakers"
+    },
+    {
+      "id": 2,
+      "name": "Denim Jacket",
+      "description": "Stylish denim jacket for casual wear.",
+      "price": 89.99,
+      "category": "Clothing",
+      "stock": 15,
+      "image": "https://via.placeholder.com/200x200?text=Jacket"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "description": "Noise-cancelling wireless headphones with 20 hours battery life.",
+      "price": 129.99,
+      "category": "Electronics",
+      "stock": 30,
+      "image": "https://via.placeholder.com/200x200?text=Headphones"
+    }
+  ],
+
+  "orders": []
+}

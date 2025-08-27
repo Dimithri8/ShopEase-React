@@ -1,0 +1,44 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.accountContainer {
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 2px;
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+}
+.link-name {
+  color: black;
+  font-size: 12px;
+}
+.searchBar {
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  padding: 10px 25px;
+  width: 500px;
+  margin-right: 10px;
+}
+.searchBar:focus {
+  outline: none;
+  border-color: rgb(37, 106, 255);
+}
+.primary-btn {
+  background-color: rgb(37, 106, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  color: white;
+}

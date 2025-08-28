@@ -1,0 +1,8 @@
+.product-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  gap: 20px;
+}

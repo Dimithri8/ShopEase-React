@@ -1,0 +1,14 @@
+.filtersContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filterWrapper {
+  display: flex;
+  gap: 10px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(221, 229, 231, 0.116);
+}

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ handleChange, handleClick, input }) {
   return (
     <header id="header">
       <div className="logoContainer">
@@ -19,9 +19,11 @@ export default function Header() {
           type="text"
           name="search"
           id="search"
+          value={input}
+          onChange={handleChange}
           placeholder="Search for products"
         />
-        <button className="primary-btn" type="button">
+        <button className="primary-btn" type="button" onClick={handleClick}>
           Search
         </button>
       </form>

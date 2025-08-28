@@ -1,10 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 
-import Header from "./components/Header";
+import ProductListPage from "./pages/ProductListPage/ProductListPage";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <ProductListPage />
     </BrowserRouter>
   );
 }

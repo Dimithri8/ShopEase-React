@@ -3,7 +3,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 import "./ProductCard.css";
 
-export default function ProductCard() {
+export default function ProductCard({ product }) {
   return (
     <>
       <section className="productCardsContainer">
@@ -21,8 +21,14 @@ export default function ProductCard() {
           }}
         >
           <CardMedia
-            sx={{ height: 200, borderRadius: 1 }}
-            image="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2a933dd8-2a79-459d-b5a3-1e3e20bd759b/JORDAN+MVP+92.png"
+            component={"img"}
+            sx={{
+              height: 250,
+              borderRadius: 1,
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            src={product.image}
           />
           <CardContent>
             <Typography
@@ -30,12 +36,12 @@ export default function ProductCard() {
               variant="h3"
               component={"div"}
             >
-              Nike Shoes
+              {product.name}
             </Typography>
 
             <div className="card-actions-wrapper">
               <Typography variant="p" sx={{ fontWeight: 700 }}>
-                $180.00
+                {product.price}
               </Typography>
 
               <FavoriteBorderIcon

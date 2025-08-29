@@ -7,7 +7,20 @@ import {
 } from "@mui/material";
 import "./Filter.css";
 
-export default function Filter() {
+export default function Filter({
+  category,
+  condition,
+  selectPrice,
+  selectCategory,
+  selectConditon,
+  clearFilter,
+  selectedCategory,
+  selectedCondition,
+  selectedPrice,
+}) {
+  const uniqueCategories = [...new Set(category)];
+  const uniqueConditions = [...new Set(condition)];
+
   return (
     <section className="filtersContainer">
       <div className="filterWrapper">
@@ -17,33 +30,31 @@ export default function Filter() {
             label="Category"
             labelId="category-dropdown-label"
             id="category-dropdown"
+            onChange={selectCategory}
+            value={selectedCategory}
           >
-            <MenuItem value="Electronics">Electronics</MenuItem>
-            <MenuItem value="Electronics">Gym Equipment</MenuItem>
-            <MenuItem value="Electronics">Kitchen Supplies</MenuItem>
+            {uniqueCategories.map((item, index) => (
+              <MenuItem value={item} key={index}>
+                {item}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ width: 200 }} size="small">
-          <InputLabel id="model-dropdown-label">Model</InputLabel>
-          <Select
-            label="Model"
-            labelId="model-dropdown-label"
-            id="model-dropdown"
-          >
-            <MenuItem value="Electronics">Electronics</MenuItem>
-            <MenuItem value="Electronics">Gym Equipment</MenuItem>
-            <MenuItem value="Electronics">Kitchen Supplies</MenuItem>
-          </Select>
-        </FormControl>
+
         <FormControl sx={{ width: 200 }} size="small">
           <InputLabel id="condition-dropdown-label">Condition</InputLabel>
           <Select
             label="Condition"
             labelId="condition-dropdown-label"
             id="condition-dropdown"
+            onChange={selectConditon}
+            value={selectedCondition}
           >
-            <MenuItem value="New">New</MenuItem>
-            <MenuItem value="Used">Used</MenuItem>
+            {uniqueConditions.map((item, index) => (
+              <MenuItem value={item} key={index}>
+                {item}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
         <FormControl sx={{ width: 200 }} size="small">
@@ -52,14 +63,17 @@ export default function Filter() {
             label="Price"
             labelId="price-dropdown-label"
             id="price-dropdown"
+            onChange={selectPrice}
+            value={selectedPrice}
           >
-            <MenuItem value="Electronics">1,000 - 10,000</MenuItem>
-            <MenuItem value="Electronics">10,000 - 50,000</MenuItem>
-            <MenuItem value="Electronics">50,000 - 100,000</MenuItem>
+            <MenuItem value={50}>{"< 50"}</MenuItem>
+            <MenuItem value={100}>{"< 100"}</MenuItem>
+            <MenuItem value={200}>{"< 200"}</MenuItem>
           </Select>
         </FormControl>
         <Button
           variant="contained"
+          onClick={clearFilter}
           sx={{
             backgroundColor: "#cccccc50",
             color: "black",

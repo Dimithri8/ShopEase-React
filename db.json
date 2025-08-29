@@ -7,6 +7,7 @@
       "price": 59.99,
       "category": "Shoes",
       "stock": 20,
+      "condition": "New",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2a933dd8-2a79-459d-b5a3-1e3e20bd759b/JORDAN+MVP+92.png"
     },
     {
@@ -16,6 +17,7 @@
       "price": 89.99,
       "category": "Clothing",
       "stock": 15,
+      "condition": "New",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9f49ef7f-8c86-4d1b-a071-b2d42b9bc378/M+J+BRK+GFX+PO+HD.png"
     },
     {
@@ -25,6 +27,7 @@
       "price": 129.99,
       "category": "Electronics",
       "stock": 30,
+      "condition": "New",
       "image": "https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw2b874696/1.JBL_TUNE_230NC_Product%20image_Hero_Black.png?sw=453&sh=453"
     },
     {
@@ -34,6 +37,7 @@
       "price": 129.99,
       "category": "Electronics",
       "stock": 30,
+      "condition": "Used",
       "image": "https://buyabans.com/cdn-cgi/imagedelivery/OgVIyabXh1YHxwM0lBwqgA/product/2493/190x190201_2.jpg/public"
     }
   ],

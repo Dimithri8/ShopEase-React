@@ -34,7 +34,6 @@ export default function ProductListPage() {
   function handleChange(event) {
     let userInput = event.target.value;
     setSearch(userInput);
-    console.log(`Search term: ${search}`);
   }
   function clearFilter() {
     setProducts(allProducts);

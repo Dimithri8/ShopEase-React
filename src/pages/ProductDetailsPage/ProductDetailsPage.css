@@ -1,0 +1,19 @@
+.product-details-container {
+  display: flex;
+  gap: 50px;
+  margin: 50px 100px;
+}
+.span {
+  color: rgb(70, 70, 70);
+}
+.product-desc {
+  margin: 10px 0;
+}
+.product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.column-text {
+  margin-top: 50px;
+}

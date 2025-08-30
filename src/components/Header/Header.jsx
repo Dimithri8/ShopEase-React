@@ -32,15 +32,15 @@ export default function Header({ handleChange, handleClick, input }) {
           <span className="link-name">Orders</span>
           <LocalShippingOutlinedIcon />
         </Link>
-        <Link to={"/orders"} aria-label="Saved" className="nav-link">
+        <Link to={"/saved"} aria-label="Saved" className="nav-link">
           <span className="link-name">Saved</span>
           <FavoriteBorderOutlinedIcon />
         </Link>
-        <Link to={"/orders"} aria-label="My Cart" className="nav-link">
+        <Link to={"/cart"} aria-label="My Cart" className="nav-link">
           <span className="link-name">My Cart</span>
           <LocalMallOutlinedIcon />
         </Link>
-        <Link to={"/orders"} aria-label="Profile" className="nav-link">
+        <Link to={"/profile"} aria-label="Profile" className="nav-link">
           <span className="link-name">Profile</span>
           <PermIdentityOutlinedIcon />
         </Link>

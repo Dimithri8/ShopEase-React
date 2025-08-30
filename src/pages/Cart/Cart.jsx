@@ -55,6 +55,42 @@ export default function Cart() {
     return Math.round((total + item.price * item.qty) * 100) / 100;
   }, 0);
 
+  useEffect(() => {
+    async function syncCart() {
+      const response = await fetch(`http://localhost:3001/cart`);
+      const serverCart = await response.json();
+
+      for (const item of cart) {
+        const serverItem = serverCart.find((i) => i.id === item.id);
+        if (!serverItem) {
+          await fetch(`http://localhost:3001/cart`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(item),
+          });
+        } else if (serverItem.qty !== item.qty) {
+          await fetch(`http://localhost:3001/cart/${item.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ qty: item.qty }),
+          });
+        }
+      }
+      for (const serverItem of serverCart) {
+        if (!cart.find((i) => i.id === serverItem.id)) {
+          await fetch(`http://localhost:3001/cart/${serverItem.id}`, {
+            method: "DELETE",
+          });
+        }
+      }
+    }
+    if (cart.length) {
+      syncCart();
+    }
+  }, [cart]);
+
   return (
     <>
       <div className="cart-container">

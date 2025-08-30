@@ -91,6 +91,14 @@ export default function Cart() {
     }
   }, [cart]);
 
+  async function clearServerCart() {
+    for (const item of cart) {
+      await fetch(`http://localhost:3001/cart/${item.id}`, {
+        method: "DELETE",
+      });
+    }
+    dispatch({ type: "clear_cart" });
+  }
   return (
     <>
       <div className="cart-container">
@@ -108,7 +116,7 @@ export default function Cart() {
               fullWidth
               type="button"
               variant="outlined"
-              onClick={() => dispatch({ type: "clear_cart" })}
+              onClick={clearServerCart}
             >
               Clear Cart
             </Button>

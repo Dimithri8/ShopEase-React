@@ -9,18 +9,34 @@ import "./ProductDetailsPage.css";
 
 export default function ProductDetailsPage() {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     async function getProduct() {
-      await fetch(`http://localhost:3001/products/${id}`).then((response) =>
-        response.json().then((data) => setProduct(data))
-      );
+      const response = await fetch(`http://localhost:3001/products/${id}`);
+      const data = await response.json();
+      setProduct(data);
     }
     getProduct();
   }, []);
 
   if (!product) return <p>Loading...</p>;
+
+  async function handleAddToCart() {
+    try {
+      const response = await fetch(`http://localhost:3001/cart`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(product),
+      });
+      const data = await response.json();
+      console.log(`Product added to cart`, data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <>
       <section className="product-details-container">
@@ -86,6 +102,7 @@ export default function ProductDetailsPage() {
               type={"button"}
               variant="contained"
               className="add-to-cart-btn"
+              onClick={handleAddToCart}
             >
               <ShoppingCartOutlinedIcon sx={{ mr: 1 }} />
               Add to Cart

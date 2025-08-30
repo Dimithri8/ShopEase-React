@@ -1,0 +1,21 @@
+.cart-container {
+  display: flex;
+  margin: 50px 100px;
+  gap: 20px;
+}
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 1fr;
+}
+.cart-btns-container {
+  display: flex;
+  gap: 20px;
+}
+.cart-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+}

@@ -1,1 +1,1 @@
-ShopEase is a hybrid e-commerce system built with React. It features a user-facing store for browsing products and a dashboard for admin management, including full CRUD operations, order tracking, and payment integration using Stripe/PayPal.
+ShopEase – A React e-commerce project built to practice advanced React concepts. It includes a product list page, product details page, and cart page, with shopping cart state management using useReducer, plus search and filtering features. The UI is basic but functional, implemented with React and MUI.
